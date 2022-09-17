@@ -1,15 +1,13 @@
 import { test, expect } from '@playwright/test';
 
-test.describe("navigation1", () => {
+test.describe("Test redmine.org", () => {
     
     test('Test case 1: Search for information by input', async ({ page }) => {
       await page.goto('https://www.redmine.org/');
       
       const searchButton = page.locator('//a[@href="/projects/redmine/search"]');  
       const searchButtonIsVisible = await searchButton.isVisible();
-      //expect(searchButtonIsVisible).toEqual(true); // пример аналог строка 11
       expect(await searchButton.isVisible()).toEqual(true);
-      //expect(searchButton).toBeVisible(); // пример аналог строка 11
       await searchButton.click();
       
       const searchField = page.locator('//input[@id="search-input"]') 
@@ -123,7 +121,7 @@ test.describe("navigation1", () => {
       await downloadButton.click();
       
       let downloadPage = page.locator('//h1[normalize-space(text())="Download"]');  
-      expect(await downloadPage.textContent()).toContain('Download'); // --- почему знак ¶
+      expect(await downloadPage.textContent()).toContain('Download');
     });
 
     test('Test case 5: Open Tasks page', async ({ page }) => {    
