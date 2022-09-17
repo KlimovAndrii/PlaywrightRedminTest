@@ -1,0 +1,23 @@
+{
+  "name": "qatrainee",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "generateAllureReport": "allure generate allure-results -o allure-report --clean",
+    "openAllureReport": "allure open allure-report",
+    "test": "npx playwright test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.25.2",
+    "allure-commandline": "^2.18.1",
+    "experimental-allure-playwright": "^0.0.3"
+  },
+  "dependencies": {
+    "-": "^0.0.1",
+    "allure-playwright": "^2.0.0-beta.19"
+  }
+}
